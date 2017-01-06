@@ -1,61 +1,5 @@
 # Get Prime in a list
-'''
-def sieve(n):
-    list = [False]*(n+1)
-    Primes = []
-    for i in range(2,n+1):
-        if not list[i]:
-            Primes.append(i)
-            for j in range(2*i,n+1,i):
-                list[j]=True
-    return Primes
-
-primes = sieve(10**6)    
-'''
-def prime_factorization(num):
-    #primes = sieve(num) # if primes are not prebuilt
-    reduced = {}
-    for prime in primes:
-        if prime<=num and num%prime == 0:
-            reduced[prime] = 0
-            while num%prime == 0:
-                reduced[prime] += 1
-                num//=prime
-    return reduced
-    
-def prime_factorization2(num):
-    reduced = {}
-    if num%2==0:
-        reduced[2] = 0
-        while num%2==0:
-            reduced[2]+=1
-            num//=2
-    for i in range(3,math.ceil(num**.5),2):
-        if num%i==0:
-            reduced[i] = 0
-            while num%i==0:
-                reduced[i]+=1
-                num//=i
-    if num>2:
-        reduced[num] = 1
-        
-#primes = sieve(1000)        
-
-def just_primes(num):
-    #primes = sieve(math.ceil(num**.5))
-    divisible = []
-    if num%2==0:
-        divisible.append(2)
-        num//=2
-    for prime in primes:
-        while num%prime==0:
-            if not prime in divisible:
-                divisible.append(prime)
-            num//=(prime)
-    if num>2:
-        divisible.append(num)
-    return divisible
-
+import math
 def sieve(n):
     mark = [i % 2 for i in range(n)]
     mark[1] = 0
@@ -65,6 +9,99 @@ def sieve(n):
             for i in range(value * 3, n, value * 2):
                 mark[i] = 0
     return mark
+
+'''
+def sieve(n):
+    list = [False] * (n + 1)
+    Primes = []
+    for i in range(2, n + 1):
+        if not list[i]:
+            Primes.append(i)
+            for j in range(2 * i, n + 1, i):
+                list[j] = True
+    return Primes
+'''
+
+primes = sieve(10 ** 6)
+
+
+def prime_factorization(num):
+    # primes = sieve(num) # if primes are not prebuilt
+    reduced = {}
+    for prime in primes:
+        if prime <= num and num % prime == 0:
+            reduced[prime] = 0
+            while num % prime == 0:
+                reduced[prime] += 1
+                num //= prime
+    return reduced
+
+
+def prime_factorization2(num):
+    reduced = {}
+    if num % 2 == 0:
+        reduced[2] = 0
+        while num % 2 == 0:
+            reduced[2] += 1
+            num //= 2
+    for i in range(3, math.ceil(num ** .5), 2):
+        if num % i == 0:
+            reduced[i] = 0
+            while num % i == 0:
+                reduced[i] += 1
+                num //= i
+    if num > 2:
+        reduced[num] = 1
+
+
+primes = sieve(1000)
+def just_primes(num):
+    # primes = sieve(math.ceil(num**.5))
+    divisible = []
+    if num % 2 == 0:
+        divisible.append(2)
+        num //= 2
+    for prime in primes:
+        while num % prime == 0:
+            if not prime in divisible:
+                divisible.append(prime)
+            num //= (prime)
+    if num > 2:
+        divisible.append(num)
+    return divisible
+
+# This one doesn't return itself, if it is a prime
+def just_primes2(x):
+    # primes = sieve(math.ceil(num**.5))
+    num = x
+    divisible = []
+    if num % 2 == 0:
+        divisible.append(2)
+        num //= 2
+        if num == 1:
+            return []
+    for i in range(len(primes)):
+        if primes[i] == 1:
+            prime = i
+            if prime > num:
+                break
+            while num % prime == 0:
+                if not prime in divisible:
+                    divisible.append(prime)
+                num //= prime
+                if x/prime == 1:
+                    return []
+    if num > 2:
+        divisible.append(num)
+    return divisible
+def num_coprimes(num):
+    factorized = just_primes(num)
+    coprimes = num
+    # print(factorized)
+    for p in factorized:
+        coprimes *= (1 - 1 / p)
+    return int(coprimes)
+
 def getPrimes(m):
     sieves = sieve(m)
     primes = [i for i, f in enumerate(sieves) if f]
@@ -97,7 +134,7 @@ def gcd(a, b):
         return b
     return gcd(b%a, a)
 a = gcd(3,25)
-print(a)
+
 
 # Find Least Common Mutiplier
 def lcm(a, b):
@@ -141,17 +178,15 @@ def decimal2binary(num):
     while n > 0:
         n -= 1
         new = num1 - 2**n
-        print new
+        print(new)
         if new >= 0:
             bin.append('1')
             num1 = new
         else:
             bin.append('0')
-
-
     return bin
 
-#any number to a base.  represented as a list of intergers in that base.  
+#any number to a base.  represented as a list of intergers in that base.
 def numberToBase(n, b):
     if n == 0:
         return [0]
@@ -162,5 +197,15 @@ def numberToBase(n, b):
     return digits[::-1]
 
 
+def fast_exp(x,n,m):
+    result = 1
+    currentpower = x
+    while n > 0:
+        if n % 2 == 1:
+            result = (result * currentpower) % m
 
+        currentpower = (currentpower * currentpower) % m
+        n = n//2
+
+    return result
 
