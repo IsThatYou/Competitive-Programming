@@ -91,6 +91,28 @@ def isprime(nums):
                     logicallist.append(1)
 
     return logicallist
+def isprime(n):
+    """Returns True if n is prime."""
+    if n == 2:
+        return True
+    if n == 3:
+        return True
+    if n % 2 == 0:
+        return False
+    if n % 3 == 0:
+        return False
+
+    i = 5
+    w = 2
+
+    while i * i <= n:
+        if n % i == 0:
+            return False
+
+        i += w
+        w = 6 - w
+
+    return True
 # Great Common divisor
 def gcd(a, b):
     while (a == 0):
@@ -113,6 +135,7 @@ def getLetters():
     return a
 
 # BinarySearch
+# a is the list, d is the value to be searched
 def binarySearch(a, d):
     low = 0
     up = len(a) -1
