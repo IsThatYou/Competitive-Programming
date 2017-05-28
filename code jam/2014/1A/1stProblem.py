@@ -1,5 +1,5 @@
 def main():
-    a = open('A-small-attempt0.in.txt', 'r')
+    a = open('test.txt', 'r')
     test = a.read()
     #test = raw_input()
     test2 = test.replace('\n', ',')

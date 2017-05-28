@@ -49,8 +49,6 @@ def just_primes(x):
                 num //= prime
                 if x/prime == 1:
                     return []
-
-
     if num > 2:
         divisible.append(num)
     return divisible

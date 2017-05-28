@@ -1,5 +1,6 @@
 # Get Prime in a list
 import math
+# return a blooean list to indicate if a number is prime
 def sieve(n):
     mark = [i % 2 for i in range(n)]
     mark[1] = 0
@@ -24,19 +25,23 @@ def sieve(n):
 
 primes = sieve(10 ** 6)
 
-
+# returns a dictionary
+# this one has power
 def prime_factorization(num):
-    # primes = sieve(num) # if primes are not prebuilt
+    primes = sieve(math.ceil(num ** .5)) # if primes are not prebuilt
     reduced = {}
-    for prime in primes:
-        if prime <= num and num % prime == 0:
-            reduced[prime] = 0
-            while num % prime == 0:
-                reduced[prime] += 1
-                num //= prime
+    for i in range(len(primes)):
+        if primes[i] == 1:
+            prime = i
+            if prime <= num and num % prime == 0:
+                reduced[prime] = 0
+                while num % prime == 0:
+                    reduced[prime] += 1
+                    num //= prime
     return reduced
 
-
+# supposed to be faster than top one
+#smart
 def prime_factorization2(num):
     reduced = {}
     if num % 2 == 0:
@@ -52,11 +57,14 @@ def prime_factorization2(num):
                 num //= i
     if num > 2:
         reduced[num] = 1
+    return reduced
 
 
 primes = sieve(1000)
+# this sort of gives the prime factors.
+# no power
 def just_primes(num):
-    # primes = sieve(math.ceil(num**.5))
+    primes = sieve(math.ceil(num**.5))
     divisible = []
     if num % 2 == 0:
         divisible.append(2)
@@ -71,8 +79,9 @@ def just_primes(num):
     return divisible
 
 # This one doesn't return itself, if it is a prime
+# doesn't have the power
 def just_primes2(x):
-    # primes = sieve(math.ceil(num**.5))
+    primes = sieve(math.ceil(x**.5))
     num = x
     divisible = []
     if num % 2 == 0:
@@ -134,7 +143,17 @@ def gcd(a, b):
         return b
     return gcd(b%a, a)
 a = gcd(3,25)
+# answer = 1
 
+# taking a list instead of 2 numbers
+def long_gcd(a):
+    previous = a[0]
+    for i in range(1, len(a)):
+        new = gcd(previous, a[i])
+        previous = new
+
+    return previous
+#print(long_gcd([30,25,5]))
 
 # Find Least Common Mutiplier
 def lcm(a, b):
@@ -208,4 +227,16 @@ def fast_exp(x,n,m):
         n = n//2
 
     return result
+
+def factor(a):
+    results = []
+    for i in range(2, int(a**0.5)+1):
+        if a % i == 0:
+           results.append(i)
+           results.append(a/i)
+    results.append(a)
+    return results
+
+
+
 
