@@ -21,8 +21,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ISSNAKE.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pre_elmination_A/ISSNAKE.py">
+      <file leaf-file-name="SNTEMPLE.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pre_elmination_A/SNTEMPLE.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -45,6 +45,7 @@
       <list>
         <option value="$PROJECT_DIR$/pre_elmination_A/teamformation.py" />
         <option value="$PROJECT_DIR$/pre_elmination_A/ISSNAKE.py" />
+        <option value="$PROJECT_DIR$/pre_elmination_A/SNTEMPLE.py" />
       </list>
     </option>
   </component>
@@ -110,7 +111,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.teamformation">
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.ISSNAKE">
     <configuration default="false" name="teamformation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,6 +132,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="2017 snackdown" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pre_elmination_A/teamformation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ISSNAKE" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pre_elmination_A" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="2017 snackdown" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pre_elmination_A/ISSNAKE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -262,12 +287,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.teamformation" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ISSNAKE" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.teamformation" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.ISSNAKE" />
+        <item index="1" class="java.lang.String" itemvalue="Python.teamformation" />
       </list>
     </recent_temporary>
   </component>
@@ -324,6 +351,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pre_elmination_A/ISSNAKE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre_elmination_A/SNTEMPLE.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
